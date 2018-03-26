@@ -31,13 +31,13 @@ namespace wicked
 		{
 		}
 
-		float Vector3::operator[](size_t index)
+		float& Vector3::operator[](size_t index)
 		{
 			assert(index >= 0 && index < m_length);
 			return *(&x + index);
 		}
 
-		const float Vector3::operator[](size_t index) const
+		const float& Vector3::operator[](size_t index) const
 		{
 			assert(index >= 0 && index < m_length);
 			return *(&x + index);
