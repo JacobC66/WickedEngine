@@ -55,6 +55,37 @@ namespace wicked
 			return *this;
 		}
 
+		void Vector4::operator+= (const Vector4& u)
+		{
+			x += u.x;
+			y += u.y;
+			z += u.z;
+			w += u.w;
+		}
+
+		void Vector4::operator-= (const Vector4& u)
+		{
+			x -= u.x;
+			y -= u.y;
+			z -= u.z;
+			w -= u.w;
+		}
+		void Vector4::operator*= (const Vector4& u)
+		{
+			x *= u.x;
+			y *= u.y;
+			z *= u.z;
+			w *= u.w;
+		}
+
+		void Vector4::operator/= (const Vector4& u)
+		{
+			x /= u.x;
+			y /= u.y;
+			z /= u.z;
+			w /= u.w;
+		}
+
 		Vector4 operator+(const Vector4& u, const Vector4& v)
 		{
 			return Vector4
@@ -101,7 +132,7 @@ namespace wicked
 
 		bool operator==(const Vector4& u, const Vector4& v)
 		{
-			return (u.x == v.x && u.y == v.y && u.z == v.y && u.w == v.w);
+			return (u.x == v.x && u.y == v.y && u.z == v.z && u.w == v.w);
 		}
 
 		bool operator!=(const Vector4& u, const Vector4& v)

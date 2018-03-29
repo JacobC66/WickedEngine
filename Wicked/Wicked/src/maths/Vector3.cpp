@@ -51,6 +51,33 @@ namespace wicked
 			return *this;
 		}
 
+		void Vector3::operator+= (const Vector3& u)
+		{
+			x += u.x;
+			y += u.y;
+			z += u.z;
+		}
+
+		void Vector3::operator-= (const Vector3& u)
+		{
+			x -= u.x;
+			y -= u.y;
+			z -= u.z;
+		}
+		void Vector3::operator*= (const Vector3& u)
+		{
+			x *= u.x;
+			y *= u.y;
+			z *= u.z;
+		}
+
+		void Vector3::operator/= (const Vector3& u)
+		{
+			x /= u.x;
+			y /= u.y;
+			z /= u.z;
+		}
+
 		Vector3 operator+(const Vector3& u, const Vector3& v)
 		{
 			return Vector3
@@ -93,7 +120,7 @@ namespace wicked
 
 		bool operator==(const Vector3& u, const Vector3& v)
 		{
-			return (u.x == v.x && u.y == v.y && u.z == v.y);
+			return (u.x == v.x && u.y == v.y && u.z == v.z);
 		}
 
 		bool operator!=(const Vector3& u, const Vector3& v)

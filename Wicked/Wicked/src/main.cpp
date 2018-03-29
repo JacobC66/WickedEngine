@@ -1,7 +1,9 @@
 #include <iostream>
 
-#include "maths\Vector3.h"
-#include "maths\Matrix4x4.h"
+#include "GameObject.h"
+#include "Transform.h"
+#include "MeshData.h"
+#include "Mesh.h"
 
 int main()
 {

@@ -22,6 +22,10 @@ namespace wicked
 			float& operator[](size_t index);
 			const float& operator[](size_t index) const;
 			Vector3& operator=(const Vector3& u);
+			void operator+= (const Vector3& u);
+			void operator-= (const Vector3& u);
+			void operator*= (const Vector3& u);
+			void operator/= (const Vector3& u);
 			friend Vector3 operator+(const Vector3& u, const Vector3& v);
 			friend Vector3 operator-(const Vector3& u, const Vector3& v);
 			friend Vector3 operator*(const Vector3& u, const Vector3& v);
