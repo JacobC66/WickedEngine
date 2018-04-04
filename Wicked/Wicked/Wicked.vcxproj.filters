@@ -15,33 +15,72 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\maths\Vector3.h">
+    <ClInclude Include="src\Square.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\maths\Matrix4x4.h">
+    <ClInclude Include="src\classes\maths\Matrix4x4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\maths\Vector4.h">
+    <ClInclude Include="src\classes\maths\Vector3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\maths\Transform.h">
+    <ClInclude Include="src\classes\maths\Vector4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\classes\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\classes\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\classes\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\classes\RenderMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\classes\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\classes\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\maths\Vector3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\maths\Matrix4x4.cpp">
+    <ClCompile Include="src\Square.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\maths\Vector4.cpp">
+    <ClCompile Include="src\classes\maths\Matrix4x4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\maths\Transform.cpp">
+    <ClCompile Include="src\classes\maths\Vector3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\maths\Vector4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\RenderMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\classes\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

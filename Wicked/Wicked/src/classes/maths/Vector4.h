@@ -13,8 +13,6 @@ namespace wicked
 				struct { float r, g, b, a; };
 			};
 
-			float magnitud;
-
 			Vector4();
 			Vector4(float _x, float _y, float _z, float _w);
 			Vector4(const Vector4& u);
@@ -22,16 +20,24 @@ namespace wicked
 			float& operator[](size_t index);
 			const float& operator[](size_t index) const;
 			Vector4& operator=(const Vector4& u);
+			friend Vector4 operator+(const Vector4& u, float a);
+			friend Vector4 operator+(float a, const Vector4& u);
 			friend Vector4 operator+(const Vector4& u, const Vector4& v);
+			friend Vector4 operator-(const Vector4& u, float a);
+			friend Vector4 operator-(float a, const Vector4& u);
 			friend Vector4 operator-(const Vector4& u, const Vector4& v);
+			friend Vector4 operator*(const Vector4& u, float a);
+			friend Vector4 operator*(float a, const Vector4& u);
 			friend Vector4 operator*(const Vector4& u, const Vector4& v);
+			friend Vector4 operator/(const Vector4& u, float a);
+			friend Vector4 operator/(float a, const Vector4& u);
 			friend Vector4 operator/(const Vector4& u, const Vector4& v);
 			friend bool operator==(const Vector4& u, const Vector4& v);
 			friend bool operator!=(const Vector4& u, const Vector4& v);
 
 			static float dot(const Vector4& u, const Vector4& v);
+			static float magnitud(const Vector4& u);
 			static Vector4 normalize(const Vector4& u);
-			static Vector4 cross(const Vector4& u, const Vector4& v);
 			static float distance(const Vector4& u, const Vector4& v);
 
 		private:

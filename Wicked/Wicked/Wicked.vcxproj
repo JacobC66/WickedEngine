@@ -72,6 +72,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)bin\$(Platform)$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Platform)$(Configuration)\</IntDir>
+    <IncludePath>C:\Users\sosa0\Documents\OpenGL\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\sosa0\Documents\OpenGL\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)bin\$(Platform)$(Configuration)\</OutDir>
@@ -92,6 +94,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -130,17 +135,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\maths\Matrix4x4.h" />
-    <ClInclude Include="src\maths\Vector3.h" />
-    <ClInclude Include="src\maths\Transform.h" />
-    <ClInclude Include="src\maths\Vector4.h" />
+    <ClInclude Include="src\Square.h" />
+    <ClInclude Include="src\classes\Application.h" />
+    <ClInclude Include="src\classes\GameObject.h" />
+    <ClInclude Include="src\classes\maths\Matrix4x4.h" />
+    <ClInclude Include="src\classes\maths\Vector3.h" />
+    <ClInclude Include="src\classes\maths\Vector4.h" />
+    <ClInclude Include="src\classes\Mesh.h" />
+    <ClInclude Include="src\classes\RenderMesh.h" />
+    <ClInclude Include="src\classes\Shader.h" />
+    <ClInclude Include="src\classes\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\maths\Matrix4x4.cpp" />
+    <ClCompile Include="src\Square.cpp" />
+    <ClCompile Include="src\classes\Application.cpp" />
+    <ClCompile Include="src\classes\GameObject.cpp" />
+    <ClCompile Include="src\classes\glad.c" />
+    <ClCompile Include="src\classes\maths\Matrix4x4.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\maths\Vector3.cpp" />
-    <ClCompile Include="src\maths\Transform.cpp" />
-    <ClCompile Include="src\maths\Vector4.cpp" />
+    <ClCompile Include="src\classes\maths\Vector3.cpp" />
+    <ClCompile Include="src\classes\maths\Vector4.cpp" />
+    <ClCompile Include="src\classes\Mesh.cpp" />
+    <ClCompile Include="src\classes\RenderMesh.cpp" />
+    <ClCompile Include="src\classes\Shader.cpp" />
+    <ClCompile Include="src\classes\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
