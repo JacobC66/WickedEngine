@@ -41,7 +41,7 @@ namespace wicked
 			static float distance(const Vector4& u, const Vector4& v);
 
 		private:
-			const size_t m_length = 4;
+			static const size_t m_length = 4;
 		};
 	}
 }

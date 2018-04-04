@@ -121,7 +121,7 @@ namespace wicked
 			temp[2][2] = 2.0f / (near - far);
 			temp[3][0] = -(right + left) / (right - left);
 			temp[3][1] = -(top + bottom) / (top - bottom);
-			temp[3][2] = -(near + far) / (near - near);
+			temp[3][2] = -(far + near) / (far - near);
 
 			return temp;
 		}

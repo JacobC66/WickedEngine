@@ -40,12 +40,13 @@ namespace wicked
 	void RenderMesh::draw()
 	{
 		maths::Matrix4x4 model;
-		model = maths::Matrix4x4::translate(model, maths::Vector3(0.0f, 0.0f, 0.0f));
-		maths::Vector4 v(1.0f, 0.0f, 0.0f, 1.0f);
+		model = maths::Matrix4x4::translate(model, maths::Vector3(0.5f, 0.5f, 0.5f));
+		maths::Matrix4x4 projection;
+		projection = maths::Matrix4x4::ortho(-10, 10, -10, 10, -10, 10);
 
 		m_shader.use();
-		m_shader.setVector4("color", v);
 		m_shader.setMatrix4x4("model", model, false);
+		m_shader.setMatrix4x4("projection", projection, false);
 		glBindVertexArray(m_VAO);
 		glDrawArrays(GL_TRIANGLES, 0, m_mesh.position.size());
 	}
