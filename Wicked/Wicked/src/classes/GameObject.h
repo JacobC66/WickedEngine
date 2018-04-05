@@ -1,8 +1,10 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
+#include <vector>
 #include "maths\Vector3.h"
-#include "RenderMesh.h"
+#include "Mesh.h"
+#include "Shader.h"
 
 namespace wicked
 {
@@ -10,15 +12,13 @@ namespace wicked
 	{
 	public:
 		maths::Vector3 position;
-		RenderMesh renderMesh;
+		Mesh mesh;
+		Shader shader;
 	private:
-		static std::vector<GameObject*> vGameObjects;
-
+		static std::vector<GameObject*> gameObjects;
+		
 	public:
-		GameObject(const maths::Vector3& pos, const Mesh& mesh, const Shader& shader);
-		void setPosition(const maths::Vector3& pos);
-		void setRenderMesh(const RenderMesh& rMesh);
-
+		GameObject();
 		virtual void Start();
 		virtual void Update();
 

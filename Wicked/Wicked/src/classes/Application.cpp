@@ -1,11 +1,13 @@
 #include <glad\glad.h>
 #include "Application.h"
 #include "maths\Vector4.h"
-#include "GameObject.h"
 
 #include <iostream>
+#include <vector>
 
 #include "Shader.h"
+#include "Mesh.h"
+#include "RenderMesh.h"
 
 namespace wicked
 {
@@ -20,19 +22,14 @@ namespace wicked
 		if (window.createWindow())
 		{
 			if (window.initOpenGL())
-			{	
-				/*Shader shader(svShader, sfShader);
-				std::vector<maths::Vector3> vertex
-				{
-					maths::Vector3(-0.5f, -0.5f, 0.0),
-					maths::Vector3(0.5f, -0.5f, 0.0f),
-					maths::Vector3(0.0f, 0.5f, 0.0f)
-				};
-				Mesh mesh;
-				mesh.position = vertex;
-				RenderMesh rM(mesh, shader);*/
-
+			{
 				// Start
+				std::vector<RenderMesh *>renderGameObject;
+				for (size_t i{ 0 }; i < GameObject::gameObjects.size(); i++)
+				{
+					GameObject::gameObjects[i]->Start();
+					renderGameObject.push_back(new RenderMesh(GameObject::gameObjects[i]));
+				}
 
 				while (!window.close())
 				{
@@ -41,6 +38,11 @@ namespace wicked
 					window.updateBufers();
 
 					// Update
+					for (size_t i{ 0 }; i < GameObject::gameObjects.size(); i++)
+					{
+						GameObject::gameObjects[i]->Update();
+						renderGameObject[i]->draw();
+					}
 
 					window.swapBuffers();
 					window.events();

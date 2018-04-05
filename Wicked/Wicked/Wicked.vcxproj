@@ -135,23 +135,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Square.h" />
     <ClInclude Include="src\classes\Application.h" />
     <ClInclude Include="src\classes\GameObject.h" />
     <ClInclude Include="src\classes\maths\Matrix4x4.h" />
     <ClInclude Include="src\classes\maths\Vector3.h" />
     <ClInclude Include="src\classes\maths\Vector4.h" />
     <ClInclude Include="src\classes\Mesh.h" />
+    <ClInclude Include="src\classes\rendering\VertexArray.h" />
+    <ClInclude Include="src\classes\rendering\VertexBuffer.h" />
     <ClInclude Include="src\classes\RenderMesh.h" />
     <ClInclude Include="src\classes\Shader.h" />
     <ClInclude Include="src\classes\Window.h" />
+    <ClInclude Include="src\Player.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Square.cpp" />
     <ClCompile Include="src\classes\Application.cpp" />
     <ClCompile Include="src\classes\GameObject.cpp" />
     <ClCompile Include="src\classes\glad.c" />
     <ClCompile Include="src\classes\maths\Matrix4x4.cpp" />
+    <ClCompile Include="src\classes\rendering\VertexArray.cpp" />
+    <ClCompile Include="src\classes\rendering\VertexBuffer.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\classes\maths\Vector3.cpp" />
     <ClCompile Include="src\classes\maths\Vector4.cpp" />
@@ -159,6 +162,7 @@
     <ClCompile Include="src\classes\RenderMesh.cpp" />
     <ClCompile Include="src\classes\Shader.cpp" />
     <ClCompile Include="src\classes\Window.cpp" />
+    <ClCompile Include="src\Player.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

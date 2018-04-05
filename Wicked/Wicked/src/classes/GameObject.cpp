@@ -4,32 +4,19 @@
 
 namespace wicked
 {
-	std::vector<GameObject*> GameObject::vGameObjects{};
+	std::vector<GameObject*> GameObject::gameObjects{};
 
-	GameObject::GameObject(const maths::Vector3& pos, const Mesh& mesh, const Shader& shader)
-		: position(pos),
-		renderMesh(mesh, shader)
+	GameObject::GameObject()
 	{
-		renderMesh.gameObject = this;
-		vGameObjects.push_back(this);
+		gameObjects.push_back(this);
 	}
 
-	void GameObject::setPosition(const maths::Vector3 & pos)
-	{
-		position = pos;
-	}
-
-	void GameObject::setRenderMesh(const RenderMesh & rMesh)
-	{
-		//renderMesh = rMesh;
-	}
-
-	void GameObject::Start()
+	void wicked::GameObject::Start()
 	{
 		// VIRTUAL
 	}
 
-	void GameObject::Update()
+	void wicked::GameObject::Update()
 	{
 		// VIRTUAL
 	}

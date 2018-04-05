@@ -2,11 +2,11 @@
 
 namespace wicked
 {
-	wicked::Mesh::Mesh()
+	Mesh::Mesh()
 	{
 	}
 
-	wicked::Mesh::Mesh(const Mesh & mesh)
+	Mesh::Mesh(const Mesh & mesh)
 		: position(mesh.position)
 	{
 	}

@@ -1,8 +1,9 @@
 #ifndef RENDERMESH_H
 #define RENDERMESH_H
 
-#include "Mesh.h"
-#include "Shader.h"
+#include "rendering\VertexArray.h"
+#include "rendering\VertexBuffer.h"
+#include "GameObject.h"
 
 namespace wicked
 {
@@ -11,15 +12,12 @@ namespace wicked
 	class RenderMesh
 	{
 	public:
+		render::VertexBuffer vertexBuffer;
+		render::VertexArray vertexArray;
 		GameObject* gameObject;
-	public:
-		Mesh m_mesh;
-		Shader m_shader;
-		unsigned int m_VAO;
 
 	public:
-		RenderMesh(const Mesh& mesh, const Shader& shader);
-		~RenderMesh();
+		RenderMesh(GameObject* _gameObject);
 		void init();
 		void draw();
 	};

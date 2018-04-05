@@ -1,16 +1,10 @@
 #include <glad\glad.h>
 #include <iostream>
-#include <glm\glm.hpp>
 #include "Shader.h"
 
 namespace wicked
 {
 	Shader::Shader()
-	{
-	}
-
-	Shader::Shader(const Shader& shader)
-		: m_program(shader.m_program)
 	{
 	}
 
@@ -41,22 +35,22 @@ namespace wicked
 		glDeleteShader(fragmentShader);
 	}
 
-	void Shader::use()
+	void Shader::use() const
 	{
 		glUseProgram(m_program);
 	}
 
-	void Shader::setVector3(const char* name, const maths::Vector3& vec3)
+	void Shader::setVector3(const char* name, const maths::Vector3& vec3) const
 	{
 		glUniform3fv(glGetUniformLocation(m_program, name), 1, &vec3[0]);
 	}
 
-	void Shader::setVector4(const char* name, const maths::Vector4& vec4)
+	void Shader::setVector4(const char* name, const maths::Vector4& vec4) const
 	{
 		glUniform4fv(glGetUniformLocation(m_program, name), 1, &vec4[0]);
 	}
 
-	void Shader::setMatrix4x4(const char* name, const maths::Matrix4x4& mat4x4, bool transpose)
+	void Shader::setMatrix4x4(const char* name, const maths::Matrix4x4& mat4x4, bool transpose) const
 	{
 		glUniformMatrix4fv(glGetUniformLocation(m_program, name), 1, transpose, &mat4x4[0][0]);
 	}
@@ -89,6 +83,6 @@ namespace wicked
 
 	Shader::~Shader()
 	{
-		glDeleteShader(m_program);
+		glDeleteProgram(m_program);
 	}
 }
