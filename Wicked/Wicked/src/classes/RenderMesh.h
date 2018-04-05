@@ -12,14 +12,17 @@ namespace wicked
 	class RenderMesh
 	{
 	public:
-		render::VertexBuffer vertexBuffer;
+		render::VertexBuffer* vertexBufferPosition;
+		render::VertexBuffer* vertexBufferUV;
+		render::VertexBuffer* vertexBufferNormal;
 		render::VertexArray vertexArray;
 		GameObject* gameObject;
 
 	public:
 		RenderMesh(GameObject* _gameObject);
-		void init();
 		void draw();
+	private:
+		void init();
 	};
 }
 

@@ -7,7 +7,9 @@ namespace wicked
 	}
 
 	Mesh::Mesh(const Mesh & mesh)
-		: position(mesh.position)
+		: position(mesh.position),
+		uv(mesh.uv),
+		normal(mesh.normal)
 	{
 	}
 }

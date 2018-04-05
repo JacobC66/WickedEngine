@@ -5,9 +5,8 @@
 #include <iostream>
 #include <vector>
 
-#include "Shader.h"
-#include "Mesh.h"
 #include "RenderMesh.h"
+#include "Time.h"
 
 namespace wicked
 {
@@ -31,8 +30,13 @@ namespace wicked
 					renderGameObject.push_back(new RenderMesh(GameObject::gameObjects[i]));
 				}
 
+				float lastFrame = 0.0f;
 				while (!window.close())
 				{
+					float currentFrame = static_cast<float>(glfwGetTime());
+					Time::deltaTime = currentFrame - lastFrame;
+					lastFrame = currentFrame;
+
 					static maths::Vector4 color(0.5f, 0.5f, 0.5f, 1.0f);
 					window.color(color);
 					window.updateBufers();

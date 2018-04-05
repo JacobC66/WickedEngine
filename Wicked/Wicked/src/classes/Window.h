@@ -22,6 +22,8 @@ namespace wicked
 		GLFWwindow* m_window;
 		int m_buffersActivated;
 
+		static GLFWwindow* currentWindow;
+
 	public:
 		Window(int width, int height, const char* name);
 		~Window();
@@ -34,6 +36,8 @@ namespace wicked
 		void updateBufers();
 		void swapBuffers();
 		void events();
+
+		friend class Input;
 	};
 }
 

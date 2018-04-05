@@ -4,6 +4,8 @@
 
 namespace wicked
 {
+	GLFWwindow* Window::currentWindow{ nullptr };
+
 	Window::Window(int width, int height, const char * name)
 		: m_width{ width },
 		m_height{ height },
@@ -31,6 +33,7 @@ namespace wicked
 		if(!m_window)
 			return false;
 		glfwMakeContextCurrent(m_window);
+		currentWindow = m_window;
 		return true;
 	}
 

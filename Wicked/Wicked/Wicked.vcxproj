@@ -136,8 +136,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\classes\Application.h" />
+    <ClInclude Include="src\Enemy.h" />
     <ClInclude Include="src\classes\GameObject.h" />
+    <ClInclude Include="src\classes\Input.h" />
     <ClInclude Include="src\classes\maths\Matrix4x4.h" />
+    <ClInclude Include="src\classes\maths\Vector2.h" />
     <ClInclude Include="src\classes\maths\Vector3.h" />
     <ClInclude Include="src\classes\maths\Vector4.h" />
     <ClInclude Include="src\classes\Mesh.h" />
@@ -145,6 +148,7 @@
     <ClInclude Include="src\classes\rendering\VertexBuffer.h" />
     <ClInclude Include="src\classes\RenderMesh.h" />
     <ClInclude Include="src\classes\Shader.h" />
+    <ClInclude Include="src\classes\Time.h" />
     <ClInclude Include="src\classes\Window.h" />
     <ClInclude Include="src\Player.h" />
   </ItemGroup>
@@ -152,9 +156,13 @@
     <ClCompile Include="src\classes\Application.cpp" />
     <ClCompile Include="src\classes\GameObject.cpp" />
     <ClCompile Include="src\classes\glad.c" />
+    <ClCompile Include="src\classes\Input.cpp" />
     <ClCompile Include="src\classes\maths\Matrix4x4.cpp" />
+    <ClCompile Include="src\classes\maths\Vector2.cpp" />
     <ClCompile Include="src\classes\rendering\VertexArray.cpp" />
     <ClCompile Include="src\classes\rendering\VertexBuffer.cpp" />
+    <ClCompile Include="src\classes\Time.cpp" />
+    <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\classes\maths\Vector3.cpp" />
     <ClCompile Include="src\classes\maths\Vector4.cpp" />

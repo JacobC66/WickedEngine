@@ -1,8 +1,8 @@
-#include "Player.h"
+#include "Enemy.h"
 #include "classes\Time.h"
 #include "classes\Input.h"
 
-const char* vS
+const char* evS
 {
 	"#version 430 core\n"
 	"layout (location = 0) in vec3 vPos;\n"
@@ -18,44 +18,35 @@ const char* vS
 	"}"
 };
 
-const char* fS
+const char* efS
 {
 	"#version 430 core\n"
 	"in vec3 Nor;\n"
 	"out vec4 fColor;\n"
 	"void main()\n"
 	"{\n"
-	"	fColor = vec4(Nor, 1.0f);\n"
+	"	fColor = vec4(1.0f, 0.0f, 0.0f, 1.0f);\n"
 	"}"
 };
 
-std::vector<maths::Vector3> pos
+std::vector<maths::Vector3> epos
 {
 	maths::Vector3(-2, -2, 0.0f),
 	maths::Vector3(2, -2, 0.0f),
 	maths::Vector3(0.0f, 2, 0.0f)
 };
-std::vector<maths::Vector3> nor
-{
-	maths::Vector3(1.0f, 0.0f, 0.0f),
-	maths::Vector3(0.0f, 1.0f, 0.0f),
-	maths::Vector3(0.0f, 0.0f, 1.0f)
-};
 
-float speed{ 6.5f };
+float espeed{ 6.5f };
 
-void Player::Start()
+void Enemy::Start()
 {
-	shader.compile(vS, fS);
-	mesh.position = pos;
-	mesh.normal = nor;
-	position = maths::Vector3(0.0f, 0.0f, 0.0f);
+	shader.compile(evS, efS);
+	mesh.position = epos;
+	position = maths::Vector3(6.0f, 0.0f, 0.0f);
 }
 
-void Player::Update()
+void Enemy::Update()
 {
-	position.x += Input::getAxis("Horizontal") * Time::deltaTime * speed;
-	position.y += Input::getAxis("Vertical") * Time::deltaTime * speed;
 }
 
-Player p;
+Enemy e;
