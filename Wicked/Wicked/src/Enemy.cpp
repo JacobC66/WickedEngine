@@ -40,9 +40,12 @@ float espeed{ 6.5f };
 
 void Enemy::Start()
 {
+	tag = "Enemy";
 	shader.compile(evS, efS);
 	mesh.position = epos;
 	position = maths::Vector3(6.0f, 0.0f, 0.0f);
+	boxCollider.setSize(maths::Vector3(2.0f, 2.0f, 0.0f));
+	boxCollider.setPosition(position);
 }
 
 void Enemy::Update()

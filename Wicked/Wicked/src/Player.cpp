@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Player.h"
 #include "classes\Time.h"
 #include "classes\Input.h"
@@ -46,16 +47,26 @@ float speed{ 6.5f };
 
 void Player::Start()
 {
+	tag = "Player";
 	shader.compile(vS, fS);
 	mesh.position = pos;
 	mesh.normal = nor;
 	position = maths::Vector3(0.0f, 0.0f, 0.0f);
+	boxCollider.setSize(maths::Vector3(4.0f, 4.0f, 0.0f));
 }
 
 void Player::Update()
 {
+	boxCollider.setPosition(position);
 	position.x += Input::getAxis("Horizontal") * Time::deltaTime * speed;
 	position.y += Input::getAxis("Vertical") * Time::deltaTime * speed;
+}
+
+void Player::CollisionEnter(const BoxCollider& object)
+{
+	static int count{ 0 };
+	if (object.gameObject->tag == "Enemy")
+		std::cout << "collision: " << count++ << "\n" << std::endl;
 }
 
 Player p;

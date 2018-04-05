@@ -136,6 +136,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\classes\Application.h" />
+    <ClInclude Include="src\classes\BoxCollider.h" />
     <ClInclude Include="src\Enemy.h" />
     <ClInclude Include="src\classes\GameObject.h" />
     <ClInclude Include="src\classes\Input.h" />
@@ -154,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\classes\Application.cpp" />
+    <ClCompile Include="src\classes\BoxCollider.cpp" />
     <ClCompile Include="src\classes\GameObject.cpp" />
     <ClCompile Include="src\classes\glad.c" />
     <ClCompile Include="src\classes\Input.cpp" />
