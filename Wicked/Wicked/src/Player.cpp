@@ -32,15 +32,21 @@ const char* fS
 
 std::vector<maths::Vector3> pos
 {
-	maths::Vector3(-2, -2, 0.0f),
-	maths::Vector3(2, -2, 0.0f),
-	maths::Vector3(0.0f, 2, 0.0f)
+	maths::Vector3(-2, -2, 0),
+	maths::Vector3(2, -2, 0),
+	maths::Vector3(2, 2, 0),
+	maths::Vector3(2, 2, 0),
+	maths::Vector3(-2, -2, 0),
+	maths::Vector3(-2, 2, 0)
 };
 std::vector<maths::Vector3> nor
 {
-	maths::Vector3(1.0f, 0.0f, 0.0f),
-	maths::Vector3(0.0f, 1.0f, 0.0f),
-	maths::Vector3(0.0f, 0.0f, 1.0f)
+	maths::Vector3(1, 0, 1),
+	maths::Vector3(0, 1, 1),
+	maths::Vector3(1, 1, 0),
+	maths::Vector3(1, 1, 0),
+	maths::Vector3(1, 0, 1),
+	maths::Vector3(0, 1, 1)
 };
 
 float speed{ 6.5f };
@@ -66,7 +72,7 @@ void Player::CollisionEnter(const BoxCollider& object)
 {
 	static int count{ 0 };
 	if (object.gameObject->tag == "Enemy")
-		std::cout << "collision: " << count++ << "\n" << std::endl;
+		object.gameObject->isDestroy = true;
 }
 
 Player p;

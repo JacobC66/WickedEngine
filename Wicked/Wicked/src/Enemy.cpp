@@ -25,15 +25,27 @@ const char* efS
 	"out vec4 fColor;\n"
 	"void main()\n"
 	"{\n"
-	"	fColor = vec4(1.0f, 0.0f, 0.0f, 1.0f);\n"
+	"	fColor = vec4(Nor, 1.0f);\n"
 	"}"
 };
 
 std::vector<maths::Vector3> epos
 {
-	maths::Vector3(-2, -2, 0.0f),
-	maths::Vector3(2, -2, 0.0f),
-	maths::Vector3(0.0f, 2, 0.0f)
+	maths::Vector3(-2, -2, 0),
+	maths::Vector3(2, -2, 0),
+	maths::Vector3(2, 2, 0),
+	maths::Vector3(2, 2, 0),
+	maths::Vector3(-2, -2, 0),
+	maths::Vector3(-2, 2, 0)
+};
+std::vector<maths::Vector3> enor
+{
+	maths::Vector3(1, 0, 0),
+	maths::Vector3(0, 0, 1),
+	maths::Vector3(0, 1, 0),
+	maths::Vector3(0, 1, 0),
+	maths::Vector3(1, 0, 0),
+	maths::Vector3(0, 0, 1)
 };
 
 float espeed{ 6.5f };
@@ -43,7 +55,8 @@ void Enemy::Start()
 	tag = "Enemy";
 	shader.compile(evS, efS);
 	mesh.position = epos;
-	position = maths::Vector3(6.0f, 0.0f, 0.0f);
+	mesh.normal = enor;
+	position = maths::Vector3(6.0f, 7.0f, 0.0f);
 	boxCollider.setSize(maths::Vector3(2.0f, 2.0f, 0.0f));
 	boxCollider.setPosition(position);
 }

@@ -14,6 +14,7 @@ namespace wicked
 	class GameObject
 	{
 	public:
+		bool isDestroy;
 		std::string tag;
 		maths::Vector3 position;
 		Mesh mesh;

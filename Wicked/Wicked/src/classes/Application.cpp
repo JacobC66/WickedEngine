@@ -44,14 +44,17 @@ namespace wicked
 					// Update
 					for (size_t i{ 0 }; i < GameObject::gameObjects.size(); i++)
 					{
-						GameObject::gameObjects[i]->Update();
-						for (size_t j{ 0 }; j < GameObject::gameObjects.size(); j++)
+						if (!GameObject::gameObjects[i]->isDestroy)
 						{
-							if (j == i)
-								continue;
-							GameObject::CheckCollision(GameObject::gameObjects[i], GameObject::gameObjects[j]);
+							GameObject::gameObjects[i]->Update();
+							for (size_t j{ 0 }; j < GameObject::gameObjects.size(); j++)
+							{
+								if (j == i)
+									continue;
+								GameObject::CheckCollision(GameObject::gameObjects[i], GameObject::gameObjects[j]);
+							}
+							renderGameObject[i]->draw();
 						}
-						renderGameObject[i]->draw();
 					}
 
 					window.swapBuffers();

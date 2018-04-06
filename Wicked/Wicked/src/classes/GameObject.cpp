@@ -8,6 +8,7 @@ namespace wicked
 
 	GameObject::GameObject()
 	{
+		isDestroy = false;
 		gameObjects.push_back(this);
 		boxCollider.gameObject = this;
 	}
